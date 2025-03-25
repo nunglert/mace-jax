@@ -9,6 +9,7 @@ import ase.io
 import jax
 import jraph
 import numpy as np
+import jax.numpy as jnp
 from roundmantissa import ceil_mantissa
 
 from mace_jax.data.neighborhood import get_neighborhood

@@ -2,7 +2,7 @@ from typing import Callable, List, Optional
 import jax
 from ase.calculators.calculator import Calculator, all_changes
 from ase.stress import full_3x3_to_voigt_6_stress
-from jax.config import config
+from jax._src.config import config
 import numpy as np
 import jraph
 from flax import traverse_util

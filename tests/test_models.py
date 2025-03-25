@@ -6,7 +6,7 @@ import jax
 import jax.numpy as jnp
 import jraph
 import numpy as np
-from e3nn_jax.util import assert_equivariant
+from e3nn_jax.utils import assert_equivariant
 
 from mace_jax import modules
 from mace_jax.modules import MACE, SymmetricContraction
