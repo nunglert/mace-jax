@@ -43,7 +43,7 @@ class MessagePassingConvolution(hk.Module):
                 ]
             ).regroup()  # [n_edges, irreps]
         else:
-            one = e3nn.IrrepsArray.ones("0e", edge_attrs.shape[:-1])
+            one = e3nn.IrrepsArray.zeros("0e", edge_attrs.shape[:-1]) + 1
             messages = e3nn.tensor_product(
                 messages, e3nn.concatenate([one, edge_attrs.filter(drop="0e")])
             ).filter(self.target_irreps)
