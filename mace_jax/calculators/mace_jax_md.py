@@ -2,7 +2,7 @@ from typing import Callable, List, Optional
 import jax
 from ase.calculators.calculator import Calculator, all_changes
 from ase.stress import full_3x3_to_voigt_6_stress
-from jax.config import config
+from jax._src.config import config
 import numpy as np
 import jraph
 from jax import jit, vmap
@@ -13,10 +13,14 @@ from mace_jax.data.utils import (
     atomic_numbers_to_indices,
 )
 import time
-from jax_md import partition, space, simulate
-from jax.lax import fori_loop
-from jax_md import quantity
+
+try:
+    from jax_md import partition, space, simulate
+    from jax_md import quantity
+except:
+    pass
 import jax.numpy as jnp
+from jax.lax import fori_loop
 from functools import partial
 from flax import traverse_util
 

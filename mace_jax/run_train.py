@@ -7,6 +7,7 @@ import jax
 import mace_jax
 from mace_jax import tools
 from mace_jax.tools.gin_datasets import datasets
+from mace_jax import modules
 from mace_jax.tools.gin_functions import (
     checks,
     flags,
@@ -18,6 +19,7 @@ from mace_jax.tools.gin_functions import (
 )
 from mace_jax.tools.gin_model import model
 
+# loss = gin.configurable("loss")(modules.WeightedEnergyForcesStressLoss)
 
 def main():
     seed = flags()
